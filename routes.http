@@ -1,1 +1,32 @@
 POST http://localhost:3333/videos
+Content-type: application/json
+  
+{
+    "title": "Mr. Bean",
+    "description": "This is a really good film",
+    "duration": 110
+}
+
+###
+
+GET http://localhost:3333/videos
+//GET http://localhost:3333/videos?search=node   I can use search...
+  
+
+###
+
+PUT http://localhost:3333/videos/3360c15a-4e1d-486c-98f6-cdb23c5c53ed
+Content-type: application/json
+
+{
+    "title": "007",
+    "description": "This film is also good",
+    "duration": 97
+}
+
+
+###
+
+DELETE http://localhost:3333/videos/3360c15a-4e1d-486c-98f6-cdb23c5c53ed
+
+
