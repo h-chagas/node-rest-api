@@ -11,7 +11,7 @@
 * Create a sql database instance following [these steps](https://github.com/porsager/postgres)  
 
 * Create a .env file and copy+paste Neon credentials to it:   
-<img src="public\images\neon-postgres-credentials.png" alt="Alt text">
+<img src="public/images/neon-postgres-credentials.png" alt="Neon credentials">
 
 * Install dotenv -D  
 ```bash
