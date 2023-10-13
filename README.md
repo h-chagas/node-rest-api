@@ -56,7 +56,7 @@ CREATE TABLE videos (
 );
 ```  
 
-*To create the table, run:  
+* To create the table, run:  
 ```bash
 node create-table.js
 ```
@@ -67,12 +67,32 @@ node create-table.js
 
 ## Deploying on Render  
 
-* Create an account  
+(Your code should be a GitHub repository)
 
-* Click on New+ button
+* Create an account.  
 
-* 
+* Click on New+ button.  
 
+* Mark first option (Build and deploy from a GitHub repository) and press Next.  
+
+* Click on button connect related to your GitHub project.  
+
+* Choose same region from database (e.g., US-east)
+
+* Build Command: 
+```bash
+npm install
+```
+
+* Start Command (double check your package.json scripts): 
+```bash
+npm run start
+```
+
+* Click on Advanced
+  * Add Environment Variable (open .env file and add each one of them on Render)
+
+*Click on Create Web Service button.
 
 
 
