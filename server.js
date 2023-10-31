@@ -27,6 +27,18 @@ server.get('/videos', async (request) => {
     return videos
 });
 
+server.get('/videos/:id', async (request, reply) => {
+    const videoId = request.params.id
+    
+    await database.update(videoId, {
+        title,
+        description,
+        duration
+    })
+    return reply.status(200).send()
+});
+
+
 
 server.put('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
