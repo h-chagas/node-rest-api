@@ -1,32 +1,32 @@
-POST http://localhost:3333/videos
+POST https://node-rest-api-s7k3.onrender.com/videos
 Content-type: application/json
   
 {
-    "title": "Mr. Bean",
-    "description": "This is a really good film",
-    "duration": 110
+    "title": "Maskara",
+    "description": "Comedy film",
+    "duration": 105
 }
 
 ###
 
-GET http://localhost:3333/videos
-//GET http://localhost:3333/videos?search=node   I can use search...
+GET https://node-rest-api-s7k3.onrender.com/videos
+//GET https://node-rest-api-s7k3.onrender.com/videos?search=node   I can use search...
   
 
 ###
 
-PUT http://localhost:3333/videos/3360c15a-4e1d-486c-98f6-cdb23c5c53ed
+PUT https://node-rest-api-s7k3.onrender.com/videos/dd96cde2-9529-4215-a3b1-b0a30b9580f5
 Content-type: application/json
 
 {
-    "title": "007",
-    "description": "This film is also good",
-    "duration": 97
+    "title": "Titanic",
+    "description": "Drama film",
+    "duration": 130
 }
 
 
 ###
 
-DELETE http://localhost:3333/videos/3360c15a-4e1d-486c-98f6-cdb23c5c53ed
+DELETE https://node-rest-api-s7k3.onrender.com/videos/3360c15a-4e1d-486c-98f6-cdb23c5c53ed
 
 
