@@ -28,7 +28,7 @@ server.get('/videos', async (request) => {
 });
 
 server.get('/videos/:id', async (request, reply) => {
-    const videos = await database.list(search);
+    const videos = await database.list();
 
     function getVideoById(id) {
         return videos.find(video => video.id === Number(id));
