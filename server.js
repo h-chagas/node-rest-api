@@ -28,14 +28,23 @@ server.get('/videos', async (request) => {
 });
 
 server.get('/videos/:id', async (request, reply) => {
-    const videoId = request.params.id
-    const videos = await database.list();
-
+    let video;
+    const videoId = request.params.id;
+    const videos = await database.list(search);
+    
     for (let i = 0; i < videos.length; i++) {
         if (videos.length[i].id == videoId) {
-            return reply.status(200).send(videos.length[i]);
+            video = videos.length[i];
             break;
-        } 
+        }
+
+    }
+
+    if (video) {
+        return reply.status(200).send(video)
+    } else {
+        const emptyResponse = {};
+        reply.status(404).send(emptyResponse)
     }
 });
 
