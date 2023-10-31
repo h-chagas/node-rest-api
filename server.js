@@ -31,9 +31,9 @@ server.get('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
    // const {title, description, duration} = request.body;
 
-    const video = await getVideoById(videoId)
+    const video = await database.list(videoId) 
 
-    return reply.status(200).send(video)
+    return video
 });
 
 
