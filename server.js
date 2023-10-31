@@ -29,13 +29,11 @@ server.get('/videos', async (request) => {
 
 server.get('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
-    
-    await database.update(videoId, {
-        title,
-        description,
-        duration
-    })
-    return reply.status(200).send()
+   // const {title, description, duration} = request.body;
+
+    const video = await getVideoById(videoId)
+
+    return reply.status(200).send(video)
 });
 
 
