@@ -33,8 +33,8 @@ server.get('/videos/:id', async (request, reply) => {
     const videos = await database.list();
     
     for (let i = 0; i < videos.length; i++) {
+        console.log("------->", videos.length[i]);
         if (videos.length[i].id == videoId) {
-            console.log("------->", videos.length[i]);
             video = videos.length[i];
             break;
         }
