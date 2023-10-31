@@ -28,15 +28,15 @@ server.get('/videos', async (request) => {
 });
 
 server.get('/videos/:id', async (request, reply) => {
+    const videos = await database.list(search);
 
     function getVideoById(id) {
-        // Find the resource with the specified ID
-        return resources.find(resource => resource.id === Number(id));
+        return videos.find(video => video.id === Number(id));
       }
 
     const videoId = request.params.id;
 
-    const video = await getVideoById(videoId)
+    const video = getVideoById(videoId)
 
     if (!video) {
         reply.code(404).send({ error: 'Video not found' });
