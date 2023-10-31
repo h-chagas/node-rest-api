@@ -27,13 +27,17 @@ server.get('/videos', async (request) => {
     return videos
 });
 
-server.get('/videos/:id', async (request, reply) => {
+server.get('/videos/:id', async (request) => {
     const videoId = request.params.id
-   // const {title, description, duration} = request.body;
-
-    const video = await database.list(videoId) 
-
-    return video
+    const videos = await database.list();
+console.log(videos);
+return videos
+    for (let i = 0; i < videos.length; i++) {
+        if (videos.length[i].id == videoId) {
+            return videos.length[i]
+            break;
+        } 
+    }
 });
 
 
