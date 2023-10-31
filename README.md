@@ -4,7 +4,7 @@
 
 * Create your Postgres relational database using [Neon.tech](https://neon.tech/)    
 
-* Project deployed on [Render](https://render.com/). Click [here](node-rest-api-s7k3.onrender.com) to check the deployed version.  
+* Project deployed on [Render](https://render.com/). Click [here](https://node-rest-api-s7k3.onrender.com) to check the deployed version.  
 
 
 ### Postgres installation using Neon
