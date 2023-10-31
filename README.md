@@ -1,10 +1,10 @@
 # node-rest-api
 
-* This is a REST API Node.js application, created for video management.  
-<br/>
-* Create your Postgres relational database using [Neon.tech](https://neon.tech/)  
-<br/>
-* Project deployed on [Render](https://render.com/)  
+### This is a REST API Node.js application, created for video management.  
+
+* Create your Postgres relational database using [Neon.tech](https://neon.tech/)    
+
+* Project deployed on [Render](https://render.com/). Click [here](node-rest-api-s7k3.onrender.com) to check the deployed version.  
 
 
 ### Postgres installation using Neon
