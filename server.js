@@ -28,25 +28,41 @@ server.get('/videos', async (request) => {
 });
 
 server.get('/videos/:id', async (request, reply) => {
-    let video;
+
+    function getVideoById(id) {
+        // Find the resource with the specified ID
+        return resources.find(resource => resource.id === Number(id));
+      }
+
     const videoId = request.params.id;
-    const videos = await database.list();
-    
-    for (let i = 0; i < videos.length; i++) {
-        console.log("------->", videos.length[i]);
-        if (videos.length[i].id == videoId) {
-            video = videos.length[i];
-            break;
-        }
 
-    }
+    const video = await getVideoById(videoId)
 
-    if (video) {
-        return reply.status(200).send(video)
+    if (!video) {
+        reply.code(404).send({ error: 'Video not found' });
     } else {
-        const emptyResponse = {};
-        reply.status(404).send(emptyResponse)
-    }
+        reply.send(video);
+      }
+
+
+    // const videos = await database.list();
+    
+    
+    // for (let i = 0; i < videos.length; i++) {
+    //     console.log("------->", videos.length[i]);
+    //     if (videos.length[i].id == videoId) {
+    //         video = videos.length[i];
+    //         break;
+    //     }
+
+    // }
+
+    // if (video) {
+    //     return reply.status(200).send(video)
+    // } else {
+    //     const emptyResponse = {};
+    //     reply.status(404).send(emptyResponse)
+    // }
 });
 
 
