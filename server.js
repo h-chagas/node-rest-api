@@ -19,7 +19,6 @@ server.post('/videos', async (request, reply) => {
     return reply.status(201).send()
 });
 
-
 server.get('/videos', async (request) => {
     const search = request.query.search //this is optional... ?search=
 
@@ -27,7 +26,7 @@ server.get('/videos', async (request) => {
     return videos
 });
 
-server.get('/videos/:id', async (request, reply) => { //NOT WORKING!!!!
+server.get('/videos/:id', async (request, reply) => {
     const videoId = request.params.id;
     const videos = await database.list();
 
@@ -39,8 +38,6 @@ server.get('/videos/:id', async (request, reply) => { //NOT WORKING!!!!
         return reply.status(200).send(video)
     }
 });
-
-
 
 server.put('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
@@ -55,7 +52,6 @@ server.put('/videos/:id', async (request, reply) => {
     return reply.status(204).send()
 });
 
-
 server.delete('/videos/:id', async (request, reply) => {
     const videoId = request.params.id;
 
@@ -63,8 +59,6 @@ server.delete('/videos/:id', async (request, reply) => {
 
     return reply.status(204).send();
 });
-
-
 
 
 
