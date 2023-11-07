@@ -11,7 +11,10 @@ Content-type: application/json
 
 GET https://node-rest-api-s7k3.onrender.com/videos
 //GET https://node-rest-api-s7k3.onrender.com/videos?search=node   I can use search...
-  
+
+###
+
+GET https://node-rest-api-s7k3.onrender.com/videos/cf228876-72c5-4104-bf89-e82d2a2452b6
 
 ###
 

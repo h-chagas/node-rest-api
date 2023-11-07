@@ -27,42 +27,15 @@ server.get('/videos', async (request) => {
     return videos
 });
 
-server.get('/videos/:id', async (request, reply) => {
+server.get('/videos/:id', async (request, reply) => { //NOT WORKING!!!!
+    const videoId = request.params.id;
     const videos = await database.list();
 
-    function getVideoById(id) {
-        return videos.find(video => video.id === Number(id));
-      }
+    const video = videos.find((item) => item.id === parseInt(videoId));
 
-    const videoId = request.params.id;
+    reply.send(video)
+    console.log(reply.send(video));
 
-    const video = getVideoById(videoId)
-
-    if (!video) {
-        reply.code(404).send({ error: 'Video not found' });
-    } else {
-        reply.send(video);
-      }
-
-
-    // const videos = await database.list();
-    
-    
-    // for (let i = 0; i < videos.length; i++) {
-    //     console.log("------->", videos.length[i]);
-    //     if (videos.length[i].id == videoId) {
-    //         video = videos.length[i];
-    //         break;
-    //     }
-
-    // }
-
-    // if (video) {
-    //     return reply.status(200).send(video)
-    // } else {
-    //     const emptyResponse = {};
-    //     reply.status(404).send(emptyResponse)
-    // }
 });
 
 
