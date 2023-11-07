@@ -31,9 +31,9 @@ server.get('/videos/:id', async (request, reply) => { //NOT WORKING!!!!
     const videoId = request.params.id;
     const videos = await database.list();
 
-    const video = videos.find((item) => item.id === videoId);
+    const video = videos.find((item) => item.id == videoId);
 
-    if (!item) {
+    if (!video) {
         return reply.status(404).send({ error: "video not found" })
     } else {
         return reply.status(200).send(video)
