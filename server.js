@@ -31,11 +31,13 @@ server.get('/videos/:id', async (request, reply) => { //NOT WORKING!!!!
     const videoId = request.params.id;
     const videos = await database.list();
 
-    const video = videos.find((item) => item.id === parseInt(videoId));
+    const video = videos.find((item) => item.id === videoId);
 
-    reply.send(video)
-    console.log(reply.send(video));
-
+    if (!item) {
+        return reply.status(404).send({ error: "video not found" })
+    } else {
+        return reply.status(200).send(video)
+    }
 });
 
 
